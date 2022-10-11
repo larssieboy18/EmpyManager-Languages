@@ -12,14 +12,54 @@ tempchannel-panel-body: |
   - %hidden%
   
   Use one of the **buttons** below to **edit your channel**.
+  
+tempchannel-private-button: "Private"
+tempchannel-public-button: "Public"
+tempchannel-hide-button: "Hide"
+tempchannel-show-button: "Show"
+tempchannel-edit-button: "Edit Channel"
+tempchannel-kick-button: "Kick"
+tempchannel-ban-button: "Ban"
+
+tempchannel-generator-title: |
+  📝 Control Your Channel
+
+tempchannel-generator-body: |
+  **🖱 Click** the **buttons** below or use **Slash Commands** (`/`) to **📝 control** your channel.
+  
+  %privateCommands%
+  %hideCommands%
+  %waitingCommands%
+  %manageCommands%
+  %moveCommands%
+  %inviteCommand%
+
+tempchannel-generator-private-msg: "🚫 `/private` / 🌐 `/public`\n"
+tempchannel-generator-hide-msg: "👻 `/hide` / 👁️ `/show`\n"
+tempchannel-generator-waiting-msg: "🏠 `/waitingroom` - Make your channel **🚫 private** and create a **🏠 waiting room**.\n"
+tempchannel-generator-manage-msg: "✏ `/rename`, `/limit`, `/bitrate`\n"
+tempchannel-generator-move-msg: "👞 `/kick @user` / ⛔ `/ban @user`\n"
+tempchannel-generator-invite-msg: "🔗 `/invite @user` - Send an invite to a user.\n"
+
+edit-channel-modal-title: "Edit Your Channel"
+new-name-input: "Name"
+new-name-input-placeholder: "My new channel name..."
+new-bitrate-input: "Bitrate"
+new-user-limit-input: "User limit"
+
+master-panel-add-title: "⭐ New Feature"
+master-panel-add-body: |
+  Hello! Sorry to bother you 😀.
+  
+  You might be interested in my latest feature: type `/master-panel <master-channel>` to create a panel with bot's commands. It can be useful if you want to have a panel without text channels. 📝
 
 bot-added-title: Thanks for adding me!
 bot-added-body: |
   Hello, thanks for adding me to your server!
   
-  Type `v/help` to see all of my commands.
+  Type `/help` to see all of my commands.
   
-  All you have to do to get started is `%prefix%setup` to enter a guided setup.
+  All you have to do to get started is `/setup` to enter a guided setup.
 
   These are some links that might be useful:
   - [EmpyManager's Dashboard](https://dashboard.empymanager.com/)
@@ -68,7 +108,7 @@ error-master-creation-body: |
   
 help-title: EmpyManager Commands
 help-body: |
-  🌟 `v/premium` - Support the bot and get more features
+  🌟 `/premium` - Access the commands related to Premium.
   
   -
 help-control-subtitle: 🛠️   Control your channel
@@ -83,9 +123,9 @@ help-control-body: |
   
   🚩 `/claim` - Become the owner of the channel you are currently inside (current owner must be disconnected).
   
-  👞 `/kick @user` / ⛔ `/ban @user`
+  👞 `/kick @user` / ⛔ `/ban @user` - Ban @user from the temporary channel
   
-  🔗 `/invite @user` - Invite a user to your channel (he will get a direct message).
+  🔗 `/invite @user` - Invite a user to your channel (they will get a direct message).
 
   Other commands: `/rename`, `/limit`, `/bitrate`.
   
@@ -94,7 +134,10 @@ help-control-body: |
 help-settings-subtitle: ⚙️   Admin settings
 help-settings-body: |
   - Only admins can see this -
-  📒 `v/setup` - Create a new master channel and set it up through a guided setup.
+  📒 `/setup` - Create a new master channel and set it up.
+help-settings-body-2: |
+  - Only admins can see this -
+  📒 `/setup` - Create a new master channel and set it up through a guided setup.
   
   🖥 `v/dashboard` - Access the Dashboard.
   
@@ -123,7 +166,13 @@ rename-interaction-body: "Type a new channel name here to 🏷 **rename** your c
 
  # Bitrate
 change-bitrate-interaction-title: "📣 Change bitrate"
-change-bitrate-interaction-body: "Choose a new 📣 bitrate value."
+change-bitrate-interaction-body: "Choose a new 📣 **bitrate** value."
+
+# Region
+change-region-interaction-title: "🏳️ Change region"
+change-region-interaction-body: "Choose a new 🏳️ **region** for your channel."
+
+change-region-success-body: "🏳️ **Region** set to `%region%`"
 
  # Claim
 claim-command-success-body: Done!
@@ -170,6 +219,14 @@ ban-command-success-title: "⛔ User Was Banned"
 ban-command-success-body: "⛔ %target% was banned by %author%!"
 ban-command-error-must-be-connected: The user must be connected in order to be banned.
 
+# Edit channel
+edited-channel-title: "✏ Edited Channel"
+edited-channel-body: |
+  %user% **✏ edited** %oldName% channel.
+  
+  Name: `%name%`
+  Member limit: `%limit%`
+  Bitrate: `%bitrate%`
 
 ### Quick command messages
 
@@ -254,6 +311,8 @@ cannot-make-more-permanent-channels: You cannot make more permanent channels, yo
 # Invites
 invites-disabled-here: Invites are disabled in this server for security reasons. Ask a server admin to perform `%prefix%settings invites` for more info.
 enable-invites-title: "Invites"
+invite-disabled-vote-bot: |
+  Please, vote the bot [here](https://top.gg/bot/719236419230367798/vote) to unlock invites until your vote is valid or subscribe to a donor plan (`/premium`).
 enable-invites-body: "Do you want to enable invites on this server?"
 invites-enabled: "Invites enabled."
 invites-disabled: "Invites disabled."
@@ -347,4 +406,4 @@ premium-enabled-here-body: |
   
   Please reach out [support](https://empymanager.com/support) if you need help.
   
-  **Tip**: you can always your premium plan here with the command `/premium disable` and transfer it to another server!
+  **Tip**: you can always disable your premium plan here with the command `/premium disable` and transfer it to another server!
